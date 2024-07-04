@@ -1,0 +1,29 @@
+body{
+    color: rgba(255, 255, 255, 0.808);
+}
+
+#workspace {
+    display: flex;
+    flex-direction: row;
+}
+
+.gutter {
+    background-color: #181818;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    cursor: col-resize;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TataWebsite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link type="text/css" rel="stylesheet" href="https://golden-layout.com/files/latest/css/goldenlayout-base.css" />
+    <link type="text/css" rel="stylesheet" href="https://golden-layout.com/files/latest/css/goldenlayout-dark-theme.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="./vendor/context/skins/chrome-dark.css" type="text/css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="w-[100wh] max-h-screen h-screen overflow-hidden bg-[#181818]">
+    <!-- NAVBAR -->
+    <div id="navbar" class="flex gap-8 items-center px-2 justify-between py-2">
+        <div class="flex items-center divide-x divide-gray-100/20">
+            <button class="px-4"><i class="uil uil-file"></i></button>
+            <button class="px-4"><i class="uil uil-setting"></i></button>
+        </div>
+        <p class="font-bold text-2xl">Tata Website</p>
+        <div class="flex items-center divide-x divide-gray-100/20">
+            <button class="px-4"><i class="uil uil-cloud-download"></i></button>
+        </div>
+    </div>
+
+    <!-- WORKSPACE -->
+    <div id="workspace" class="bg-[#383838] w-full h-full">
+
+        <!-- HIERARCHY WORKSPACE -->
+        <div id="ws-hierarchy" class="w-full px-2 bg-[#222222]">
+            <p class="text-center font-medium mb-3 my-4">Hierarchy</p>
+            <div class="flex gap-1 items-center">
+                <button class="px-2 rounded-sm py-.5"><i class="uil uil-plus-circle"></i></button>
+                <input placeholder="All" class="w-full bg-[#181818] rounded-md text-sm px-4 py-1" type="text" name="" id="">
+            </div>
+            <!-- Root of Hierarchy Website -->
+            <div id="root-hierarchy" class="bg-[#181818] h-full mt-2 rounded-md overflow-hidden">
+                <button id="h-body" class="item-hierarchy py-1 px-2 bg-[#383838] w-full text-left flex gap-2 items-center text-sm"><i class="uil uil-angle-right text-white"></i>Body</button>
+                <ul class="">
+
+                </ul>
+            </div>
+        </div>
+
+
+
+        <!-- MAIN WORKSPACE -->
+        <div id="ws-main" class="overflow-scroll-y h-full">
+            <div id="m-body"></div>
+        </div>
+
+
+        <!-- INSPECTOR WORKSPACE -->
+        <div id="ws-inspector" class="w-full px-2 bg-[#222222]">
+            <div id="i-body" class="py-4 hidden">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" name="" id="" checked>
+                    <input placeholder="All" value="Body" class="w-full bg-[#181818] rounded-md text-sm px-4 py-1" type="text" name="" id="">
+                </div>
+
+                <hr class="my-4 border-[#181818] border">
+
+                <!-- COLORS CONFIG -->
+                <div class="flex flex-col gap-2 mb-2">
+                    <div class="flex items-center gap-4">
+                        <i class="uil uil-paint-tool"></i>
+                        <p class="text-sm font-medium">Colors</p>
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">BG color</p>
+                        <input type="color" class="bg-[#181818] rounded-md text-sm px-2 text-center col-span-4 w-full" value="#ffffff" title="" name="" id="background-color">
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">Text color</p>
+                        <input type="color" class="bg-[#181818] rounded-md text-sm px-2 text-center col-span-4 w-full" value="#ffffff" title="" name="" id="color">
+                    </div>
+                </div>
+
+                <hr class="my-4 border-[#181818] border">
+
+                <!-- TRANSFORM CONFIG -->
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center gap-4 mb-2">
+                        <i class="uil uil-vector-square-alt"></i>
+                        <p class="text-sm font-medium">Transform</p>
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">Width</p>
+                        <input type="text" value="100%" class="col-span-4 bg-[#181818] rounded-md text-sm px-2 text-center" title="Top" placeholder="T" name="" id="width">
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">Height</p>
+                        <input type="text" value="100%" class="col-span-4 bg-[#181818] rounded-md text-sm px-2 text-center" title="Top" placeholder="T" name="" id="height">
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">Padding</p>
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Top" placeholder="T" name="" id="pt">
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Right" placeholder="R" name="" id="pr">
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Bottom" placeholder="B" name="" id="pb">
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Left" placeholder="L" name="" id="pl">
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">Margin</p>
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Top" placeholder="T" name="" id="mt">
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Right" placeholder="R" name="" id="mr">
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Bottom" placeholder="B" name="" id="mb">
+                        <input type="number" class="bg-[#181818] rounded-md text-sm px-2 text-center" title="Left" placeholder="L" name="" id="ml">
+                    </div>
+                    
+                </div>
+
+                <hr class="my-4 border-[#181818] border">
+
+                <!-- CUSTOMIZE CONFIG -->
+                <!-- <div class="flex flex-col gap-2">
+                    <div class="flex items-center gap-4 mb-2">
+                        <i class="uil uil-coffee"></i>
+                        <p class="text-sm font-medium">Customize</p>
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">Border</p>
+                        <select name="" id="" class="text-sm col-span-4 bg-[#181818] rounded-md px-2">
+                            <option value="" selected>None</option>
+                            <option value="">Small</option>
+                            <option value="">Medium</option>
+                            <option value="">Large</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-6 gap-1 items-center">
+                        <p class="col-span-2 text-sm">Shadow</p>
+                        <select name="" id="" class="text-sm col-span-4 bg-[#181818] rounded-md px-2">
+                            <option value="" selected>None</option>
+                            <option value="">Small</option>
+                            <option value="">Medium</option>
+                            <option value="">Large</option>
+                        </select>
+                    </div>
+                    
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+<script type="text/javascript" src="https://golden-layout.com/files/latest/js/goldenlayout.min.js"></script>
+<script src="./vendor/context/context.min.js"></script>
+<script type="module" src="script.js"></script>
+</html>
