@@ -1,4 +1,5 @@
-import {} from "./scripts/context-menu.js"
+import {} from "./scripts/container-hierarchy-menu.js"
+import {} from "./scripts/items-hierarchy-menu.js"
 let activeHierarchy = "body"
 
 Split(['#ws-hierarchy', '#ws-main', '#ws-inspector'], {
@@ -31,7 +32,7 @@ let default_prop = {
 bindInputsToDefaultProp("#i-body", default_prop)
 assignStyle("#m-body", default_prop)
 
-$(`#ws-hierarchy`).on("click",".item-hierarchy",function(){
+$(`#ws-hierarchy`).on("click",".item-hierarchy,.item-hierarchy-text",function(){
     activeHierarchy = $(this).attr("id").split("h-").pop()
     console.log(activeHierarchy);
     $("#ws-inspector").children().hide()
@@ -45,6 +46,11 @@ $(document).keydown(function(event) {
         assignStyle(`#m-${activeHierarchy}`, default_prop)
     }
 });
+
+$("#compile").click(function(){
+    bindInputsToDefaultProp(`#i-${activeHierarchy}`, default_prop)
+    assignStyle(`#m-${activeHierarchy}`, default_prop)
+})
 
 function bindInputsToDefaultProp(selector, prop) {
     prop.background_color = $(selector).find('#background-color').val();

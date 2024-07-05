@@ -1,33 +1,30 @@
-const root_hierarchy = document.getElementById("root-hierarchy")
+$.contextMenu({
+    selector: "#root-hierarchy",
+    items: {
+        add_div: {name: "Add Container", callback: function(key, opt){
+            let newButton = prompt("masukan nama elemen")
 
-const clickHandler = e => {
-    let newButton = prompt("masukan nama elemen")
-    var idExists = $('#root-hierarchy').find(`[id='h-${newButton}']`).length > 0;
-    if (idExists) {
-        var count = 1;
-        while ($('#root-hierarchy').find(`[id='h-${newButton}-${count}']`).length > 0) {
-            count++;
-        }
-        newButton = `${newButton}-${count}`;
+            // Check if element name already exist
+            let idExists = $('#root-hierarchy').find(`[id='h-${newButton}']`).length > 0;
+            if (idExists) {
+                let count = 1;
+                while ($('#root-hierarchy').find(`[id='h-${newButton}-${count}']`).length > 0) {
+                    count++;
+                }
+                newButton = `${newButton}-${count}`;
+            }
+
+            // Create new container in hierarchy
+            $("#root-hierarchy").append(`
+                <button id="h-${newButton}" class="item-hierarchy py-1 px-2 w-full text-left flex gap-2 items-center text-sm"><i class="uil uil-angle-right text-white"></i>${newButton}</button>
+                <ul class="">
+        
+                </ul>    
+            `)
+            $("#ws-inspector").append(addInspector(newButton))
+        }}
     }
-
-    // Create new hierarchy element
-    $("#root-hierarchy").append(`
-        <button id="h-${newButton}" class="item-hierarchy py-1 px-6 w-full text-left flex gap-2 items-center text-sm"><i class="uil uil-angle-right text-white"></i>${newButton}</button>
-        <ul class="">
-
-        </ul>    
-    `)
-
-    $("#ws-inspector").append(addInspector(newButton))
-}
-
-const contextMenu = new ContextMenu(root_hierarchy, [
-    {text: 'Add div', hotkey: 'Alt+Left arrow', onclick: clickHandler},
-]);
-
-contextMenu.install()
-
+});
 
 function addInspector(element){
     return `
